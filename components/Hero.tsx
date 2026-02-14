@@ -2,7 +2,7 @@ export default function Hero() {
   const whatsappUrl =
     "https://wa.me/6285720736221?text=" +
     encodeURIComponent("Halo saya dari website buniaga-hidroponik ingin berkonsultasi");
-  const calendlyUrl = "https://calendly.com/buniaga-hidroponik/konsultasi";
+  const calendlyUrl = "https://calendly.com/uniqfadilah/new-meeting";
 
   return (
     <section
