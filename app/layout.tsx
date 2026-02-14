@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://buniaga-hidroponik.my.id";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   icons: { icon: "/my-favicon.ico?v=1" },
   title: "Supplier Hidroponik Jakarta | Buniaga Hidroponik - Supply Sayur Stabil B2B",
   description:
@@ -32,6 +35,14 @@ export const metadata: Metadata = {
     title: "Supplier Hidroponik Jakarta | Buniaga Hidroponik",
     description:
       "Supply sayur stabil, langsung dari kebun khusus Anda. Produksi sayur hidroponik berbasis kontrak untuk bisnis di Jakarta.",
+    images: ["/favicon-32x32.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Supplier Hidroponik Jakarta | Buniaga Hidroponik",
+    description:
+      "Supply sayur stabil, langsung dari kebun khusus Anda. Produksi sayur hidroponik berbasis kontrak untuk bisnis di Jakarta.",
+    images: ["/favicon-32x32.png"],
   },
 };
 
