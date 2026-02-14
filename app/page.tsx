@@ -1,65 +1,169 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
+import FeatureCard from "@/components/FeatureCard";
+
+const PROBLEM_ITEMS = [
+  "Supply sayur tidak stabil",
+  "Harga sering berubah",
+  "Kualitas tidak konsisten",
+  "Harus sering ganti supplier",
+];
+
+const SOLUTION_ITEMS = [
+  "Produksi sesuai kebutuhan volume",
+  "Jadwal panen terencana",
+  "Kualitas konsisten",
+  "Harga lebih predictable",
+];
+
+const STEPS = [
+  { num: 1, label: "Konsultasi kebutuhan" },
+  { num: 2, label: "Rancang kontrak supply" },
+  { num: 3, label: "Lahan dialokasikan khusus" },
+  { num: 4, label: "Panen rutin & pengiriman" },
+];
+
+const TARGET_BUSINESS = [
+  "Restaurant & Cafe",
+  "Hotel",
+  "Catering Perusahaan",
+  "Supermarket Premium",
+  "Meal Prep Service",
+];
+
+const CALENDLY_URL = "https://calendly.com/uniqfadilah/new-meeting";
+
+const WHY_ITEMS = [
+  { title: "Dedicated Production", description: "Lahan dan produksi dialokasikan khusus untuk bisnis Anda, bukan sistem retail." },
+  { title: "Supply Reliability", description: "Jadwal panen terencana dan pengiriman rutin untuk supply yang stabil." },
+  { title: "Business-focused Pricing", description: "Harga lebih predictable dengan kontrak jangka menengah." },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+
+        <Section id="problem" background="gray">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Apakah bisnis Anda mengalami masalah ini?
+          </h2>
+          <ul className="mx-auto mt-10 max-w-xl space-y-3 text-center text-gray-600">
+            {PROBLEM_ITEMS.map((item) => (
+              <li key={item} className="flex items-center justify-center gap-2">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-foreground">
+            Kami membangun sistem produksi khusus untuk menghilangkan masalah
+            ini.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </Section>
+
+        <Section id="solution" background="white">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Kebun hidroponik khusus untuk bisnis Anda
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+            Model produksi berbasis kontrak: kami mengalokasikan lahan dan
+            jadwal panen sesuai kebutuhan Anda.
+          </p>
+          <ul className="mx-auto mt-10 max-w-xl space-y-3 text-center text-gray-600">
+            {SOLUTION_ITEMS.map((item) => (
+              <li key={item} className="flex items-center justify-center gap-2">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section id="how-it-works" background="primary-soft">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Cara Kerja
+          </h2>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {STEPS.map((step) => (
+              <div
+                key={step.num}
+                className="rounded-3xl border border-gray-200/80 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:shadow-md"
+              >
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white">
+                  {step.num}
+                </span>
+                <p className="mt-4 font-medium text-foreground">{step.label}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="target" background="white">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Cocok untuk bisnis seperti:
+          </h2>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {TARGET_BUSINESS.map((name) => (
+              <div
+                key={name}
+                className="rounded-3xl border border-gray-200/80 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md"
+              >
+                <p className="font-semibold text-foreground">{name}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="why" background="gray">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Mengapa memilih Buniaga Hidroponik?
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {WHY_ITEMS.map((item) => (
+              <FeatureCard
+                key={item.title}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section id="cta" background="primary-soft">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Siap mengamankan supply sayur bisnis Anda?
+            </h2>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-2xl bg-primary px-8 py-4 text-center text-base font-semibold text-white shadow-md transition-all duration-200 hover:bg-primary-dark hover:shadow-lg sm:w-auto"
+              >
+                Jadwalkan Konsultasi Supply
+              </a>
+              <a
+                href="https://wa.me/6285720736221?text=Halo%20saya%20dari%20website%20buniaga-hidroponik%20ingin%20berkonsultasi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center rounded-2xl border-2 border-primary bg-transparent px-8 py-4 text-base font-semibold text-primary transition-all duration-200 hover:bg-primary hover:text-white sm:w-auto"
+              >
+                Hubungi WhatsApp
+              </a>
+            </div>
+            <p className="mt-6 text-sm text-gray-600">
+              Konsultasi gratis tanpa komitmen.
+            </p>
+          </div>
+        </Section>
       </main>
+      <Footer />
     </div>
   );
 }
