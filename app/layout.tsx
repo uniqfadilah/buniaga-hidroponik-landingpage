@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: { icon: "/my-favicon.ico" },
   title: "Supplier Hidroponik Jakarta | Buniaga Hidroponik - Supply Sayur Stabil B2B",
   description:
     "Supplier hidroponik Jakarta untuk restaurant, hotel, catering & supermarket. Supply sayur hidroponik berbasis kontrak, lahan khusus B2B. Sayur hidroponik Jakarta - kualitas konsisten, harga predictable.",
