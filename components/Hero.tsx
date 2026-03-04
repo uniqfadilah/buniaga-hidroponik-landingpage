@@ -1,8 +1,10 @@
+import { whatsappUrl, CALENDLY_URL } from '@/constants';
+
 export default function Hero() {
-  const whatsappUrl =
-    "https://wa.me/6285720736221?text=" +
-    encodeURIComponent("Halo saya dari website buniaga-hidroponik ingin berkonsultasi");
-  const calendlyUrl = "https://calendly.com/uniqfadilah/new-meeting";
+  const whatsappLink = whatsappUrl(
+    'Halo saya dari website buniaga-hidroponik ingin berkonsultasi',
+  );
+  const calendlyUrl = CALENDLY_URL;
 
   return (
     <section
@@ -27,7 +29,7 @@ export default function Hero() {
             Jadwalkan Konsultasi Supply
           </a>
           <a
-            href={whatsappUrl}
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center rounded-2xl border-2 border-primary bg-transparent px-8 py-4 text-base font-semibold text-primary transition-all duration-200 hover:bg-primary hover:text-white sm:w-auto"

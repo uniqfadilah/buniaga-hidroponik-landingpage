@@ -1,44 +1,54 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Section from "@/components/Section";
-import FeatureCard from "@/components/FeatureCard";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Section from '@/components/Section';
+import FeatureCard from '@/components/FeatureCard';
+import { whatsappUrl, CALENDLY_URL } from '@/constants';
 
 const PROBLEM_ITEMS = [
-  "Supply sayur tidak stabil",
-  "Harga sering berubah",
-  "Kualitas tidak konsisten",
-  "Harus sering ganti supplier",
+  'Supply sayur tidak stabil',
+  'Harga sering berubah',
+  'Kualitas tidak konsisten',
+  'Harus sering ganti supplier',
 ];
 
 const SOLUTION_ITEMS = [
-  "Produksi sesuai kebutuhan volume",
-  "Jadwal panen terencana",
-  "Kualitas konsisten",
-  "Harga lebih predictable",
+  'Produksi sesuai kebutuhan volume',
+  'Jadwal panen terencana',
+  'Kualitas konsisten',
+  'Harga lebih predictable',
 ];
 
 const STEPS = [
-  { num: 1, label: "Konsultasi kebutuhan" },
-  { num: 2, label: "Rancang kontrak supply" },
-  { num: 3, label: "Lahan dialokasikan khusus" },
-  { num: 4, label: "Panen rutin & pengiriman" },
+  { num: 1, label: 'Konsultasi kebutuhan' },
+  { num: 2, label: 'Rancang kontrak supply' },
+  { num: 3, label: 'Lahan dialokasikan khusus' },
+  { num: 4, label: 'Panen rutin & pengiriman' },
 ];
 
 const TARGET_BUSINESS = [
-  "Restaurant & Cafe",
-  "Hotel",
-  "Catering Perusahaan",
-  "Supermarket Premium",
-  "Meal Prep Service",
+  'Restaurant & Cafe',
+  'Hotel',
+  'Catering Perusahaan',
+  'Supermarket Premium',
+  'Meal Prep Service',
 ];
 
-const CALENDLY_URL = "https://calendly.com/uniqfadilah/new-meeting";
-
 const WHY_ITEMS = [
-  { title: "Dedicated Production", description: "Lahan dan produksi dialokasikan khusus untuk bisnis Anda, bukan sistem retail." },
-  { title: "Supply Reliability", description: "Jadwal panen terencana dan pengiriman rutin untuk supply yang stabil." },
-  { title: "Business-focused Pricing", description: "Harga lebih predictable dengan kontrak jangka menengah." },
+  {
+    title: 'Dedicated Production',
+    description:
+      'Lahan dan produksi dialokasikan khusus untuk bisnis Anda, bukan sistem retail.',
+  },
+  {
+    title: 'Supply Reliability',
+    description:
+      'Jadwal panen terencana dan pengiriman rutin untuk supply yang stabil.',
+  },
+  {
+    title: 'Business-focused Pricing',
+    description: 'Harga lebih predictable dengan kontrak jangka menengah.',
+  },
 ];
 
 export default function Home() {
@@ -149,7 +159,9 @@ export default function Home() {
                 Jadwalkan Konsultasi Supply
               </a>
               <a
-                href="https://wa.me/6285720736221?text=Halo%20saya%20dari%20website%20buniaga-hidroponik%20ingin%20berkonsultasi"
+                href={whatsappUrl(
+                  'Halo saya dari website buniaga-hidroponik ingin berkonsultasi',
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full items-center justify-center rounded-2xl border-2 border-primary bg-transparent px-8 py-4 text-base font-semibold text-primary transition-all duration-200 hover:bg-primary hover:text-white sm:w-auto"

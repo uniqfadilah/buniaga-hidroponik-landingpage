@@ -1,3 +1,5 @@
+import { whatsappUrl, PHONE_DISPLAY } from '@/constants';
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
@@ -15,12 +17,14 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <p className="text-sm font-medium text-foreground">Kontak</p>
             <a
-              href="https://wa.me/6285720736221?text=Halo%20saya%20dari%20website%20buniaga-hidroponik%20ingin%20berkonsultasi"
+              href={whatsappUrl(
+                'Halo saya dari website buniaga-hidroponik ingin berkonsultasi',
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-600 transition-colors hover:text-primary"
             >
-              WhatsApp: +62 857-2073-6221
+              WhatsApp: {PHONE_DISPLAY}
             </a>
             <a
               href="mailto:info@buniaga-hidroponik.my.id"
